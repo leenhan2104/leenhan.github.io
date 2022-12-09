@@ -60,13 +60,26 @@
               
                 <h1 onclick="showMessage()" class="avatar__title">Hồng Phúc</h1>
             </div>
-            <audio id="player" autoplay loop>
+            <audio id="player" loop>
                 <source src="sound.mp3" type="audio/mpeg">
             </audio>
-          
         </div>
         <script>
-            audioElement.play()
+            const audio = document.getElementsByTagName('audio')[0];
+
+            document.getElementsByTagName('body')[0].addEventListener('click', () => {
+                audio.play()
+            })
+
+            // const play = () => audio.play();
+
+            // btn.addEventListener("click", () => {
+            //     console.log('a')
+            //     setTimeout(() => play(), 100)
+            // })
+
+            // btn.click();
+       
             if (document.location.search.match(/type=embed/gi)) {
                 window.parent.postMessage("resize", "*");
             }
@@ -83,4 +96,6 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </body>
 </html>
+
+
 
